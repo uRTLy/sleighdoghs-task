@@ -9,7 +9,11 @@ import rootReducer from './rootReducer';
 
 export const history = createHistory();
 
-const middlewares = [createLogger(), routerMiddleware(history), thunk];
+const middlewares = [
+  // createLogger(),
+  routerMiddleware(history),
+  thunk,
+];
 
 const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
